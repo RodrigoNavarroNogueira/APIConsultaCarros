@@ -43,4 +43,12 @@ def editar_carro_id(id):
             return jsonify(carros[index])
 
 
+@app.route('/carros/<int:id>', methods=['DELETE'])
+def excluir_carro(id):
+    for index, carro in enumerate(carros):
+        if carro.get('id') == id:
+            del carros[index]
+    return jsonify(carros)
+
+
 app.run()
