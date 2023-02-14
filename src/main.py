@@ -34,4 +34,13 @@ def create_carro():
         )
 
 
+@app.route('/carros/<int:id>', methods=['PUT'])
+def editar_carro_id(id):
+    carro_alterado = request.json()
+    for index, carro in enumerate(carros):
+        if carro.get('id') == id:
+            carros[index].update(carro_alterado)
+            return jsonify(carros[index])
+
+
 app.run()
