@@ -42,10 +42,11 @@ class ListEngine(AbstractEngine):
             print('A quantidade foi alterada!')
 
 
-    def delete(self, escolha, produto):
+    def delete(self, modelo):
         query = f'''
-        DELETE from {escolha} WHERE product = '{produto}'
+        DELETE from car WHERE modelo = '{modelo}'
         '''
         self.cursor.execute(query)
         self.database.commit()
-        return produto
+        return modelo
+
