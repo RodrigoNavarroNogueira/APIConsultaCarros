@@ -9,7 +9,7 @@ class StructureFunction:
         print('Começando o programa')
 
 
-    def create_list():
+    def create_table():
         name_list = input('Escolha o nome da sua lista:\n').lower().strip()
         db.create_table_lista(name_list)
         return name_list
@@ -35,6 +35,18 @@ class StructureFunction:
     def tabelas_existentes_str():
         cursor.execute('SELECT name FROM sqlite_master WHERE type="table";')
         print(cursor.fetchall())
+
+
+    def remover_veiculo():
+        while True:
+            modelo = input('Digite o modelo do veiculo que será excluido: (Para sair pressione "X") ')
+
+            if modelo == "x":
+                break
+
+            else:
+                engine.delete(modelo)
+                print(f'O carro {modelo} foi excluido com sucesso')
 
 
 banco = sqlite3.connect('carros.db')
