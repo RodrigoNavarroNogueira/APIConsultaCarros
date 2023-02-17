@@ -23,7 +23,12 @@ class StructureFunction:
             create_list()
 
 
-    def add_produtos():
+    def todos_os_carros():
+        cursor.execute(f"SELECT * FROM car")
+        print(cursor.fetchall())
+
+
+    def add_veiculo():
             id = rd.randint(1, 999)
             marca = input('Digite a marca: ')
             modelo = input('Digite o modelo: ')
