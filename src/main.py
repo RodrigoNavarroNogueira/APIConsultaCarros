@@ -6,5 +6,4 @@ engine = ListEngine
 
 funcoes.inicio()
 funcoes.quantidade_tabelas(funcoes.create_list)
-table_name = 'car'
 funcoes.add_produtos()
