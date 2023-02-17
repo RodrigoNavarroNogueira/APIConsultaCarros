@@ -6,5 +6,6 @@ engine = ListEngine
 
 funcoes.inicio()
 funcoes.quantidade_tabelas(funcoes.create_table)
-funcoes.add_produtos()
+funcoes.todos_os_carros()
+funcoes.add_veiculo()
 funcoes.remover_veiculo()
