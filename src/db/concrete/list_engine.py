@@ -8,14 +8,14 @@ class ListEngine(AbstractEngine):
         super().__init__('carros')
 
 
-    def create(self, id, marca, modelo, ano, created):
+    def create(self, id, marca, modelo, ano, created_at):
         query = f'''
             INSERT INTO car VALUES(
                 {id},
                 '{marca}',
-                {modelo},
-                '{ano}',
-                '{created}'
+                '{modelo}',
+                {ano},
+                '{created_at}'
             )
         '''
         self.cursor.execute(query)
