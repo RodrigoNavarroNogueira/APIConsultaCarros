@@ -1,8 +1,8 @@
 from src.db.concrete.list_engine import ListEngine
 from src.db.db_structure import DatabaseStructure
 import sqlite3
-from datetime import datetime
-import random
+from datetime import datetime as dt
+import random as rd
 
 class StructureFunction:
     def inicio():
@@ -24,11 +24,17 @@ class StructureFunction:
 
 
     def add_produtos():
-        marca = input('Digite a marca: (Para sair pressione "X") ').capitalize().strip()
-        modelo = input('Digite o modelo: (Para sair pressione "X") ').capitalize().strip()
-        ano = int(input('Ano?: '))
-        engine.create(random.randint(1, 999), marca, modelo, ano, datetime.now())
-        print(f'O carro {modelo} foi adicionado com sucesso')
+            id = rd.randint(1, 999)
+            marca = input('Digite a marca: ')
+            modelo = input('Digite o modelo: ')
+            ano = int(input('Digite o ano: '))
+            engine.create(id, marca, modelo, ano, dt.now())
+            print(f'O carro {modelo} foi adicionado com sucesso')
+
+
+    def tabelas_existentes_str():
+        cursor.execute('SELECT name FROM sqlite_master WHERE type="table";')
+        print(cursor.fetchall())
 
 
 banco = sqlite3.connect('carros.db')
