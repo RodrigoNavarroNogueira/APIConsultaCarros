@@ -5,5 +5,6 @@ funcoes = StructureFunction
 engine = ListEngine
 
 funcoes.inicio()
-funcoes.quantidade_tabelas(funcoes.create_list)
+funcoes.quantidade_tabelas(funcoes.create_table)
 funcoes.add_produtos()
+funcoes.remover_veiculo()
