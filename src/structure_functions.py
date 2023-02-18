@@ -25,7 +25,19 @@ class StructureFunction:
 
     def todos_os_carros():
         cursor.execute(f"SELECT * FROM car")
-        print(cursor.fetchall())
+        x = list(cursor.fetchall())
+        carros = []
+        count = 0
+        carro = {}
+        for chave in x:
+            carro['id'] = x[count][0]
+            carro['marca'] = x[count][1]
+            carro['modelo'] = x[count][2]
+            carro['ano'] = x[count][3]
+            carro['created'] = x[count][4]
+            count += 1
+            carros.append(carro)
+        print(carros)
 
 
     def add_veiculo():
