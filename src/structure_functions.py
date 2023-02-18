@@ -37,7 +37,7 @@ class StructureFunction:
             carro['created'] = x[count][4]
             count += 1
             carros.append(carro)
-        print(carros)
+        return carros
 
 
     def add_veiculo():
