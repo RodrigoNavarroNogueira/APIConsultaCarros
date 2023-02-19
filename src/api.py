@@ -9,14 +9,16 @@ engine = ListEngine
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
-x = funcoes.todos_os_carros()
+carros = funcoes.todos_os_carros()
 
 @app.route('/carros', methods=['GET'])
+# Busca todos os carros
 def get_carros():
-    return jsonify(x)
+    return jsonify(carros)
 
 
 @app.route('/carros/<int:id>', methods=['GET'])
+# Busca todos os carros por ID
 def obter_carro_id(id):
     for carro in carros:
         if carro.get('id') == id:
