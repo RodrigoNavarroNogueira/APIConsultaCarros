@@ -28,8 +28,8 @@ class StructureFunction:
         x = list(cursor.fetchall())
         carros = []
         count = 0
-        carro = {}
         for chave in x:
+            carro = {}
             carro['id'] = x[count][0]
             carro['marca'] = x[count][1]
             carro['modelo'] = x[count][2]
