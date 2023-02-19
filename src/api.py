@@ -1,18 +1,19 @@
 from flask import Flask, make_response, jsonify, request
 from src.bd import carros
+from src.structure_functions import StructureFunction
+from src.db.concrete.list_engine import ListEngine
+
+funcoes = StructureFunction
+engine = ListEngine
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
+x = funcoes.todos_os_carros()
 
 @app.route('/carros', methods=['GET'])
 def get_carros():
-    return make_response(
-        jsonify(
-            message='Lista de carros',
-            data=carros
-            )
-        )
+    return jsonify(x)
 
 
 @app.route('/carros/<int:id>', methods=['GET'])
