@@ -137,3 +137,4 @@ dmypy.json
 # others
 .env
 .vscode/
+teste.py
