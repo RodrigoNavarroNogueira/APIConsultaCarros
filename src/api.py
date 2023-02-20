@@ -10,6 +10,9 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
 carros = funcoes.todos_os_carros()
+# Se colocar a função add_veiculo dá erro ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 5648 and this is thread id 22096.
+# Se colocar a função engine.create dá erro ListEngine.create() missing 1 required positional argument: 'self'
+
 
 @app.route('/carros', methods=['GET'])
 # Busca todos os carros
