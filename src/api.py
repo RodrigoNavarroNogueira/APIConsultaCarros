@@ -1,5 +1,4 @@
 from flask import Flask, make_response, jsonify, request
-from src.bd import carros
 from src.structure_functions import StructureFunction
 from src.db.concrete.list_engine import ListEngine
 
