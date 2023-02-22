@@ -66,7 +66,7 @@ class StructureFunction:
                 print(f'O carro {modelo} foi excluido com sucesso')
 
 
-banco = sqlite3.connect('carros.db')
+banco = sqlite3.connect('carros.db', check_same_thread=False)
 cursor = banco.cursor()
 engine = ListEngine()
 db = DatabaseStructure()
