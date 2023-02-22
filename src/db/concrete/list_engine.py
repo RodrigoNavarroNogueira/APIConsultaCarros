@@ -49,4 +49,3 @@ class ListEngine(AbstractEngine):
         self.cursor.execute(query)
         self.database.commit()
         return modelo
-
