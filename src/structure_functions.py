@@ -2,7 +2,7 @@ from src.db.concrete.list_engine import ListEngine
 from src.db.db_structure import DatabaseStructure
 import sqlite3
 from datetime import datetime as dt
-import random as rd
+
 
 class StructureFunction:
     def inicio():
