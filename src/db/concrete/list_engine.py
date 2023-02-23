@@ -1,7 +1,9 @@
 from src.db.interface import AbstractEngine
+from src.db.db_structure import DatabaseStructure
+import sqlite3
+from datetime import datetime as dt
+import random as rd
 
-import random
-from datetime import datetime
 
 class ListEngine(AbstractEngine):
     def __init__(self):
@@ -9,18 +11,28 @@ class ListEngine(AbstractEngine):
 
 
     def create(self, id, marca, modelo, ano, created_at):
-        query = f'''
-            INSERT INTO car VALUES(
-                {id},
-                '{marca}',
-                '{modelo}',
-                {ano},
-                '{created_at}'
-            )
-        '''
-        self.cursor.execute(query)
-        self.database.commit()
+        try:
+            banco
+            cursor
+            query = f'''
+                INSERT INTO car VALUES(
+                    {id},
+                    '{marca}',
+                    '{modelo}',
+                    {ano},
+                    '{created_at}'
+                )
+            '''
+            self.cursor.execute(query)
+            self.database.commit()
+        except:
+            banco.rollback()
+        finally:
+            banco.close()
 
+
+    
+    
 
     def read(self, query):
         result = self.cursor.execute(query)
@@ -49,3 +61,8 @@ class ListEngine(AbstractEngine):
         self.cursor.execute(query)
         self.database.commit()
         return modelo
+
+banco = sqlite3.connect('carros.db', check_same_thread=False)
+cursor = banco.cursor()
+engine = ListEngine()
+db = DatabaseStructure()
