@@ -30,7 +30,7 @@ def obter_carro_id(id):
 @app.route('/carros', methods=['POST'])
 def create_carro():
     carro = request.json
-    carros.append(carro)
+    funcoes.add_veiculo(carro)
     return make_response(
         jsonify(
             message='Carro cadastrado com sucesso',
