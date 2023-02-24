@@ -31,9 +31,6 @@ class ListEngine(AbstractEngine):
             banco.close()
 
 
-    
-    
-
     def read(self, query):
         result = self.cursor.execute(query)
         result = result.fetchall()
