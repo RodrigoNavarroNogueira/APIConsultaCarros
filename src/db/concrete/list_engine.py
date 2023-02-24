@@ -51,13 +51,13 @@ class ListEngine(AbstractEngine):
             print('A quantidade foi alterada!')
 
 
-    def delete(self, modelo):
+    def delete(self, id):
         query = f'''
-        DELETE from car WHERE modelo = '{modelo}'
+        DELETE from car WHERE id = '{id}'
         '''
         self.cursor.execute(query)
         self.database.commit()
-        return modelo
+        return id
 
 banco = sqlite3.connect('carros.db', check_same_thread=False)
 cursor = banco.cursor()
