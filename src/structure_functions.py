@@ -54,16 +54,9 @@ class StructureFunction:
         print(cursor.fetchall())
 
 
-    def remover_veiculo():
-        while True:
-            modelo = input('Digite o modelo do veiculo que será excluido: (Para sair pressione "X") ')
-
-            if modelo == "x":
-                break
-
-            else:
-                engine.delete(modelo)
-                print(f'O carro {modelo} foi excluido com sucesso')
+    def remover_veiculo(id):
+        engine.delete(id)
+        print(f'O carro {id} foi excluido com sucesso')
 
 
 banco = sqlite3.connect('carros.db', check_same_thread=False)
