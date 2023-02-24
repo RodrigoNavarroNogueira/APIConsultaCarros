@@ -52,7 +52,7 @@ def editar_carro_id(id):
 def excluir_carro(id):
     for index, carro in enumerate(carros):
         if carro.get('id') == id:
-            del carros[index]
+            funcoes.remover_veiculo(id)
     return jsonify(carros)
 
 
