@@ -50,9 +50,7 @@ def editar_carro_id(id):
 
 @app.route('/carros/<int:id>', methods=['DELETE'])
 def excluir_carro(id):
-    for index, carro in enumerate(carros):
-        if carro.get('id') == id:
-            funcoes.remover_veiculo(id)
+    funcoes.remover_veiculo(id)
     return jsonify(carros)
 
 
